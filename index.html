@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>I'm Sorry — little card</title>
+
+  <!-- Optional Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1: #fbf6f2;
+      --card: #fff6f4;
+      --accent1: linear-gradient(180deg,#ffd7d0,#ffdfe6);
+      --accent2: linear-gradient(180deg,#ffdfe6,#ffd0ff);
+      --accent3: linear-gradient(180deg,#e6d9ff,#f6e7ff);
+      --muted:#7b5460;
+      --soft-shadow: 18px 18px 30px rgba(0,0,0,0.08), -10px -8px 20px rgba(255,255,255,0.9);
+      --inset-shadow: inset 6px 6px 12px rgba(0,0,0,0.06);
+      --radius: 28px;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(circle at 10% 20%, #fff0f0 0%, transparent 8%),
+                  radial-gradient(circle at 90% 80%, #fff5ff 0%, transparent 8%),
+                  var(--bg1);
+      color: #3b2b30;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .wrap{
+      max-width:420px;
+      margin:18px auto;
+      padding:18px;
+    }
+
+    .card{
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(180deg,#fff6f3,#fff1ee);
+      padding:22px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .top-preview{
+      margin:6px auto 16px;
+      border-radius:20px;
+      overflow:hidden;
+      background: linear-gradient(180deg,#ffecec,#ffdfe6);
+      padding:14px 12px;
+      box-shadow: var(--inset-shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .cute{
+      width:92%;
+      height:120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .title{
+      font-family: 'Playfair Display', serif;
+      font-size:28px;
+      text-align:center;
+      color: #6b3f45;
+      margin: 8px 0 6px;
+    }
+
+    .subtitle{
+      text-align:center;
+      color:var(--muted);
+      margin-bottom:14px;
+      line-height:1.35;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      border-radius:18px;
+      background: linear-gradient(180deg,#f3c9d1,#e5aeb8);
+      box-shadow: 0 8px 14px rgba(0,0,0,0.08), inset 0 2px 0 rgba(255,255,255,0.6);
+      color:#3b2b30;
+      font-weight:600;
+      border:none;
+      cursor:pointer;
+    }
+
+    /* options list like your screenshots */
+    .options{
+      margin-top:18px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .pill{
+      border-radius:40px;
+      padding:18px 18px;
+      min-height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 10px 10px 20px rgba(0,0,0,0.06), -6px -6px 12px rgba(255,255,255,0.9);
+      cursor:pointer;
+      user-select:none;
+      transition:transform .14s ease, box-shadow .14s ease;
+      font-weight:500;
+      color: #4b2e34;
+    }
+
+    .pill:active{ transform: translateY(3px); box-shadow:none; }
+
+    .pill.p1{ background: var(--accent1); }
+    .pill.p2{ background: var(--accent2); }
+    .pill.p3{ background: var(--accent3); }
+
+    .small-cta{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+    }
+
+    /* reveal area */
+    .reveal{
+      margin-top:18px;
+      background: linear-gradient(180deg,#fffaf9,#fff1ef);
+      border-radius:18px;
+      padding:14px;
+      box-shadow: var(--inset-shadow);
+      min-height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color: #5b3338;
+      font-weight:600;
+      font-size:18px;
+    }
+
+    /* "from my heart" grid */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+      margin-top:12px;
+    }
+    .icon-square{
+      background: linear-gradient(180deg,#f7f3ff,#fff6ff);
+      border-radius:14px;
+      padding:12px;
+      height:92px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 8px 8px 18px rgba(0,0,0,0.05);
+      cursor:pointer;
+    }
+
+    /* small responsive */
+    @media (max-width:420px){
+      .wrap{ padding:12px; }
+      .cute{ height:100px; }
+      .title{ font-size:24px; }
+    }
+
+    /* hidden class */
+    .hidden{ display:none !important; }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="mainCard">
+      <div class="top-preview">
+        <div class="cute">
+          <!-- replace this with your own image or SVG -->
+          <img src="https://via.placeholder.com/120x90?text=🐰" width="120" height="90" alt="cute" style="border-radius:12px;">
+        </div>
+      </div>
+
+      <div class="title">Hey Cutiepie</div>
+      <div class="subtitle">Can we talk for a moment? There's something important I want to tell you.</div>
+
+      <div class="options" id="options">
+        <div class="pill p1" data-msg="I messed up... and I'm really sorry for that.">I messed up... and I'm really sorry for that.</div>
+        <div class="pill p2" data-msg="I promise I'll be better for you.">I promise I'll be better for you.</div>
+        <div class="pill p3" data-msg="Please forgive me... You mean so much to me.">Please forgive me... You mean so much to me.</div>
+      </div>
+
+      <div class="small-cta">
+        <button class="btn" id="myMsgBtn">My message →</button>
+      </div>
+
+      <div class="reveal hidden" id="revealArea">Tap a line to reveal the message.</div>
+
+      <div class="grid" id="fromHeart" style="display:none;">
+        <div class="icon-square" data-msg="From my heart: I'm sorry deeply.">💌</div>
+        <div class="icon-square" data-msg="From my heart: I love you always.">❤️</div>
+        <div class="icon-square" data-msg="From my heart: I'll never take you for granted.">🫶</div>
+        <div class="icon-square" data-msg="From my heart: Can we start again?">🌸</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Interactions
+    const pills = document.querySelectorAll('.pill');
+    const reveal = document.getElementById('revealArea');
+    const myMsgBtn = document.getElementById('myMsgBtn');
+    const grid = document.getElementById('fromHeart');
+    const icons = document.querySelectorAll('.icon-square');
+
+    pills.forEach(p => {
+      p.addEventListener('click', () => {
+        // briefly animate
+        p.style.transform = 'translateY(2px)';
+        setTimeout(()=> p.style.transform = '', 120);
+
+        const text = p.dataset.msg || p.textContent;
+        reveal.classList.remove('hidden');
+        reveal.textContent = text;
+      });
+    });
+
+    myMsgBtn.addEventListener('click', () => {
+      // reveal the from-heart grid and scroll card slightly
+      grid.style.display = 'grid';
+      grid.scrollIntoView({behavior:'smooth', block:'center'});
+      // optional: change reveal text
+      reveal.classList.remove('hidden');
+      reveal.textContent = 'Tap a little heart below to see something from my heart...';
+    });
+
+    icons.forEach(ic => {
+      ic.addEventListener('click', ()=> {
+        reveal.classList.remove('hidden');
+        reveal.textContent = ic.dataset.msg || '💕';
+      });
+    });
+
+    // optional: auto-detect small-screen and adjust font sizes or layout
+  </script>
+</body>
+</html>
