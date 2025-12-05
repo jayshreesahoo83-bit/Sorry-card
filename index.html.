@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Boibi 💗</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffd6e8, #d6e7ff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+    }
+    .container {
+        width: 90%;
+        max-width: 420px;
+        padding: 25px;
+        background: white;
+        border-radius: 22px;
+        box-shadow: 0 0 25px rgba(0,0,0,0.1);
+        transition: 0.3s ease;
+        animation: fadeIn 0.7s ease;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        background: #ff9ac6;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+    }
+    .heart-btn {
+        font-size: 40px;
+        background: none;
+        border: none;
+        animation: heartbeat 1s infinite;
+        margin-top: 15px;
+    }
+    @keyframes heartbeat {
+        0% {transform: scale(1);}
+        50% {transform: scale(1.2);}
+        100% {transform: scale(1);}
+    }
+    .gif {
+        width: 100%;
+        border-radius: 15px;
+    }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="container" id="page1">
+    <h2>Hey Boibi... 💗</h2>
+    <p>Can we talk for a moment?<br>There’s something important I want to tell you.</p>
+    <button onclick="showPage(2)">Okay, tell me 💞</button>
+</div>
+
+<!-- PAGE 2 OPTIONS -->
+<div class="container" id="page2" style="display:none;">
+    <h3>Choose what you want to hear first 😔💗</h3>
+    <button onclick="showPage(3)">I messed up… and I’m really sorry.</button>
+    <button onclick="showPage(3)">I promise I’ll be better for you.</button>
+    <button onclick="showPage(3)">Please forgive me boibi… you mean so much to me.</button>
+    <button onclick="showPage(3)">I love YOU till the last star afar ✨</button>
+</div>
+
+<!-- PAGE 3 HEART -->
+<div class="container" id="page3" style="display:none;">
+    <h3>Tap the heart below, boibi… 💗</h3>
+    <p>There’s something from my heart for you.</p>
+    <button class="heart-btn" onclick="showPage(4)">❤️</button>
+</div>
+
+<!-- PAGE 4 HEART OPTIONS -->
+<div class="container" id="page4" style="display:none;">
+    <h3>Choose a heart 💗</h3>
+    <button onclick="showPage(5)">💗</button>
+    <button onclick="showPage(5)">💗</button>
+    <button onclick="showPage(5)">💗</button>
+    <button onclick="showPage(5)">💗</button>
+</div>
+
+<!-- PAGE 5 SONG -->
+<div class="container" id="page5" style="display:none;">
+    <h3>Click to know which song reminds me of you 🎧💗</h3>
+    <button onclick="showPage(6)">🎵 Tap here</button>
+</div>
+
+<!-- PAGE 6 SONG REDIRECT -->
+<div class="container" id="page6" style="display:none;">
+    <h3>This song is YOU, boibi… 💗</h3>
+    <a href="https://youtu.be/az6SmGFO-e4" target="_blank">
+        <button>🎶 Humsafar – Badrinath Ki Dulhania</button>
+    </a>
+    <button style="margin-top:15px;" onclick="showPage(7)">Next 💞</button>
+</div>
+
+<!-- PAGE 7 CONFESSION SLIDE -->
+<div class="container" id="page7" style="display:none;">
+    <h3>My Confession To You 💗</h3>
+    <p>
+        Boibi… I don’t know when it happened,  
+        but you became my softest place,  
+        my peace, my favourite feeling. 💗<br><br>
+
+        <i>“You make my heart feel like home.”</i><br><br>
+
+        And one cringe bold truth?  
+        <b>I’m dangerously in love with you and it’s totally your fault 😭❤️</b>
+    </p>
+    <button onclick="showPage(8)">Next 💗</button>
+</div>
+
+<!-- PAGE 8 CUTE CAT ANIMATION -->
+<div class="container" id="page8" style="display:none;">
+    <h3>Us as Cats 😭💗</h3>
+    <img class="gif" src="https://media.tenor.com/1Fh9UpAJZKYAAAAC/cat-kiss.gif">
+    <p>Little you kissing and hugging little me 🐱💞</p>
+    <button onclick="showPage(9)">Next 💗</button>
+</div>
+
+<!-- PAGE 9 HUG GIF -->
+<div class="container" id="page9" style="display:none;">
+    <h3>A Big Warm Hug For You 🤍🤗</h3>
+    <img class="gif" src="https://media.tenor.com/VpqvQZDl5fgAAAAC/cat-hug.gif">
+    <p>I wish I could hug you like this right now…</p>
+    <button onclick="showPage(10)">Next 💗</button>
+</div>
+
+<!-- PAGE 10 FINAL SORRY -->
+<div class="container" id="page10" style="display:none;">
+    <h3>My Sorry, My Heart 💗</h3>
+    <p>
+    I’m really, truly sorry boibi…  
+    And I love YOU infinitely, endlessly, completely, passionately,  
+    soulfully, deeply, immensely, proudly,  
+    lovingly, happily, trulyyyyy and always. 💗  
+    </p>
+    <button onclick="showPage(11)">Final 💞</button>
+</div>
+
+<!-- PAGE 11 OPEN WHEN YOU MISS ME -->
+<div class="container" id="page11" style="display:none;">
+    <h2>Open This When You Miss Me 💗</h2>
+    <p>
+        If you’re missing me…  
+        then know this — I’m thinking of you too.  
+        Missing you too.  
+        Wanting you too.  
+        Loving you even more. 💗<br><br>
+
+        You’re my person, boibi.  
+        My favourite forever.  
+    </p>
+</div>
+
+<script>
+function showPage(n) {
+    for (let i = 1; i <= 11; i++) {
+        document.getElementById("page" + i).style.display = "none";
+    }
+    document.getElementById("page" + n).style.display = "block";
+}
+</script>
+
+</body>
+</html>
